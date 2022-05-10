@@ -1,0 +1,12 @@
+FROM lambci/lambda:build-python3.7
+
+COPY ./src .
+
+RUN python3 -m venv v-env \
+  && source v-env/bin/activate \
+  && pip install -r requirements.txt
+
+RUN mv ./v-env/lib/python3.7/site-packages/* . \
+  && rm -rf ./v-env
+
+CMD ["zip", "-9yr", "/tmp/dtpln-wl-predictor.zip", "."]

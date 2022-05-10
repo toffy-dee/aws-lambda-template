@@ -1,0 +1,33 @@
+{
+    "S3ObjectKeys":[
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:36:06.281000+02:00_RRSignal.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:36:36.281000+02:00_RRSignal.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:37:06.281000+02:00_RRSignal.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:37:36.281000+02:00_RRSignal.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:38:06.281000+02:00_RRSignal.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:38:36.281000+02:00_RRSignal.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:39:06.281000+02:00_RRSignal.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:39:36.281000+02:00_RRSignal.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:40:06.281000+02:00_RRSignal.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:40:36.281000+02:00_RRSignal.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:41:06.281000+02:00_RRSignal.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:41:36.281000+02:00_RRSignal.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:36:06.281000+02:00_AccFeatures.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:36:36.281000+02:00_AccFeatures.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:37:06.281000+02:00_AccFeatures.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:37:36.281000+02:00_AccFeatures.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:38:06.281000+02:00_AccFeatures.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:38:36.281000+02:00_AccFeatures.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:39:06.281000+02:00_AccFeatures.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:39:36.281000+02:00_AccFeatures.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:40:06.281000+02:00_AccFeatures.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:40:36.281000+02:00_AccFeatures.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:41:06.281000+02:00_AccFeatures.csv",
+        "wearhealth.dev/4148b53e-28bc-4a32-ac1b-a85d8d1f810e/1/2020-07-15T11:41:36.281000+02:00_AccFeatures.csv"
+    ],
+    "Locale": "en",
+    "Leisure-Mode": "0",
+    "Reminders-Enabled": "0",
+    "Smart-Notifications-Enabled": "0",
+    "Duration": 30
+}

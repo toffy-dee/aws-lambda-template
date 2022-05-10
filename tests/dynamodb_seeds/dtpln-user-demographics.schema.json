@@ -1,0 +1,19 @@
+{
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "demographics_id",
+      "AttributeType": "S"
+    }
+  ],
+  "ProvisionedThroughput": {
+    "WriteCapacityUnits": 5,
+    "ReadCapacityUnits": 5
+  },
+  "TableName": "dtpln-user-demographics",
+  "KeySchema": [
+    {
+      "KeyType": "HASH",
+      "AttributeName": "demographics_id"
+    }
+  ]
+}

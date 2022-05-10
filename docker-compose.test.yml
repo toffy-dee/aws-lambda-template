@@ -1,0 +1,74 @@
+version: '3.7'
+
+services:
+
+  # runs DynamoDB container simulating the service locally
+  lambda-name-dynamodb-mock:
+    image: amazon/dynamodb-local:latest
+    container_name: lambda-name-dynamodb-mock
+    ports:
+      - "8000:8000"
+    expose:
+      - "8000"
+
+  # runs S3 container simulating the service locally
+  lambda-name-s3-mock:
+    image: adobe/s3mock
+    environment:
+      initialBuckets: "dtpln-stopover"
+    ports:
+      - '9090:9090'
+      - '9091:9091'
+
+  # runs container to seed S3 and DynamoDB with data
+  lambda-name-seeder:
+    build:
+      context: ./
+      dockerfile: Dockerfile.seeder
+    depends_on:
+      - lambda-name-s3-mock
+    env_file:
+        - .env
+    volumes:
+      - ./tests:/var/task:ro,delegated
+    command: python3 /var/task/seeder.py
+
+  # runs Lambda container simulating the service locally with the code in the /src folder
+  dtpln-lambda-name:
+    depends_on:
+      - lambda-name-dynamodb-mock
+    image: lambci/lambda:python3.7
+    container_name: dtpln-lambda-name
+    env_file:
+      - .env
+    ports:
+      - "9001:9001"
+    environment:
+      - AWS_LAMBDA_FUNCTION_HANDLER=lambda_function.lambda_handler
+      - DOCKER_LAMBDA_WATCH=1
+      - DOCKER_LAMBDA_STAY_OPEN=1
+    volumes:
+      - ./src:/var/task:ro,delegated
+
+  # runs container for executing tests by sending http request to the Lambda container
+  dtpln-lambda-name-test:
+    build:
+      context: ./
+      dockerfile: Dockerfile.test
+    container_name: dtpln-lambda-name-test
+    env_file:
+      - .env
+    volumes:
+      - ./tests:/var/task:ro,delegated
+    command: python3 var/task/run_tests.py
+
+  # launches the local DynamoDB, S3 and Lambda services
+  lambda-name-start_dependencies:
+    image: dadarek/wait-for-dependencies
+    depends_on:
+      - lambda-name-dynamodb-mock
+      - lambda-name-s3-mock
+      - dtpln-lambda-name
+    command: lambda-name-dynamodb-mock:8000 lambda-name-s3-mock:9090 dtpln-lambda-name:9001
+    environment:
+      - SLEEP_LENGTH=5.0

@@ -1,0 +1,13 @@
+{
+  "demographics_id": "1",
+  "demographics": {
+      "id":  "0",
+      "birth_year": "1991",
+      "weight": "80000",
+      "height": "180",
+      "sex": "m",
+      "hr_rest": "60",
+      "group_id": "empty",
+      "hr_rest_uat": "2021-12-07 00:00:00"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "session_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "user_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "application_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "group_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "date",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "updated_at",
+      "AttributeType": "S"
+    }
+  ],
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "gsi_user_date",
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput": {
+        "WriteCapacityUnits": 8,
+        "ReadCapacityUnits": 8
+      },
+      "KeySchema": [
+        {
+          "AttributeName": "user_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "date",
+          "KeyType": "RANGE"
+        }
+      ]
+    },
+    {
+      "IndexName": "gsi_app_date",
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput": {
+        "WriteCapacityUnits": 8,
+        "ReadCapacityUnits": 8
+      },
+      "KeySchema": [
+        {
+          "AttributeName": "application_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "date",
+          "KeyType": "RANGE"
+        }
+      ]
+    },
+    {
+      "IndexName": "gsi_group_date",
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput": {
+        "WriteCapacityUnits": 8,
+        "ReadCapacityUnits": 8
+      },
+      "KeySchema": [
+        {
+          "AttributeName": "group_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "date",
+          "KeyType": "RANGE"
+        }
+      ]
+    },
+    {
+      "IndexName": "gsi_app_updated",
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput": {
+        "WriteCapacityUnits": 8,
+        "ReadCapacityUnits": 8
+      },
+      "KeySchema": [
+        {
+          "AttributeName": "application_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "updated_at",
+          "KeyType": "RANGE"
+        }
+      ]
+    }
+  ],
+  "ProvisionedThroughput": {
+    "WriteCapacityUnits": 5,
+    "ReadCapacityUnits": 5
+  },
+  "TableName": "dtpln-user-session",
+  "KeySchema": [
+    {
+      "KeyType": "HASH",
+      "AttributeName": "session_id"
+    },
+    {
+      "KeyType": "RANGE",
+      "AttributeName": "date"
+    }
+  ]
+}
